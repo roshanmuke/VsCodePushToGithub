@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+
+
+.clearBtn {
+  float: left;
+  margin-top: 20px;
+}
+.submitBtn {
+  float: right;
+  margin-top: 20px;
+}
+.main{
+  height:850px;
+  width:650px;
+  border:2px solid black;
+  padding: 20px;
+  border-radius: 8px;
+}
+.main{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 20px;
+    border: 1px solid darkgray;
+    
+}

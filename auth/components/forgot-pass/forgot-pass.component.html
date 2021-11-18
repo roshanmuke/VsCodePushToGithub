@@ -1,0 +1,33 @@
+<div class="formcontainer">
+
+
+   <h3> ForgotPassword </h3>
+
+    <form>
+      <div class="form-group">
+        <label for="email">*Email</label>
+        <input 
+        type="text"
+       class="form-control"
+       id="email"
+      placeholder="Enter Email"
+      name="email"
+      minlength="6"
+      required
+      
+      />
+      <div class="alert alert-danger">
+        <strong>Error!</strong>this field is required .
+        </div>
+     
+        <div class="alert alert-danger">
+          <strong>Error!</strong>this field is required minimum 6 character.
+          </div>
+          </div>
+       <div class="form-group clearfix">
+           <button type="submit" class="btn btn-primary submitBtn">Submit</button>
+
+       </div>
+       </form>
+         <a routerLink="/auth/login">Back to Login</a>
+         </div>

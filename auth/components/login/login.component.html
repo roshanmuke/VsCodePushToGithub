@@ -1,0 +1,110 @@
+
+<!-- <div class='main'>
+<div class="container">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+		<div class="form-group">
+			<label for="InputEmail1">Email address</label>
+      <input type="email" class="form-control" formControlName="email" placeholder="Enter email">
+      <small class="form-text text-muted" 
+        *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+          Please enter email address.!
+      </small>
+
+      <small class="form-text text-muted"
+      *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">
+        Email address not well formed.!
+      </small>
+    </div>
+    
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" formControlName="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+</div> -->
+
+<div class="main">
+ <div class="formcontainer">
+
+    <h3>Login</h3>
+
+    <form #loginForm= "ngForm">
+      <div class="form-group">
+        <label for="user">Name:</label>
+        <input 
+        type="text"
+       class="form-control"
+       id="user"
+      placeholder="Enter Name"
+      name="userName"
+      minlength="4"
+      required
+      #userNameRef="ngModel"
+      [(ngModel)]="userName"
+      />
+     
+        <div 
+        class="alert alert-danger"
+        *ngIf="userNameRef.errors?.required && userNameRef.touched"
+        >
+          <strong>Error</strong>this field is required.
+          </div>
+          <div 
+        class="alert alert-danger"
+        *ngIf="userNameRef.errors?.required && userNameRef.touched"
+        >
+          <strong>Error</strong>this field is required minimum 3 charactors.
+          </div>
+       </div>
+
+        <div class="form-group">
+          <label for="pwd">*Password</label>
+          <input 
+          type="password"
+         class="form-control"
+         id="pwd"
+        placeholder="Enter password"
+        name="password"
+        minlength="6"
+        required
+        #passwordRef="ngModel"
+        [(ngModel)]="password"/>
+
+        
+          <div 
+          class="alert alert-danger"
+          *ngIf="passwordRef.errors?.required && passwordRef.touched">
+            <strong>Error!</strong>this field is required.
+            </div>
+            <div 
+            class="alert alert-danger"
+            *ngIf="passwordRef.errors?.required && passwordRef.touched">
+              <strong>Error!</strong>this field is required minimum 6 character.
+              </div>
+          </div>
+
+          <div class="form-group clearfix">
+            <button
+             type="button"
+              class="btn btn-secondary clearBtn"
+            (click)="clearFun(loginForm)"
+            >
+              Clear
+            </button>
+            <button
+            type="submit"
+            class="btn btn-primary submitBtn"
+            (click)="loginFun(loginForm)"
+            >
+            Submit
+          </button>
+
+          </div>
+        
+    </form>
+    <a routerLink="/auth/forgotPassword">ForgotPassword </a>
+    <a routerLink="/auth/register">| Registration</a>
+  </div>
+  </div>
+
